@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'chat_page.dart';
 
 const dGreen = Color(0xFF2ac0a6);
 const dWhite = Colors.white;
@@ -290,7 +291,14 @@ class MessageSection extends StatelessWidget {
       child: Column(
         children: messages.map((messages) {
           return InkWell(
-            onTap: () => {},
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ChatPage(),
+                ),
+              ),
+            },
             splashColor: dGreen,
             child: Container(
               padding: EdgeInsets.only(left: 30, right: 10, top: 15),
